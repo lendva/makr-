@@ -1,0 +1,350 @@
+Sub Expert_import()
+Sheets("Expert").Select
+'1.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=0&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$1"))
+'        .CommandType = 0
+        .Name = _
+        "1.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'2.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=6000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$6002"))
+'        .CommandType = 0
+        .Name = _
+        "2.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'3.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=12000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$12003"))
+'        .CommandType = 0
+        .Name = _
+        "3.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'4.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=18000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$18004"))
+'        .CommandType = 0
+        .Name = _
+        "4.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'5.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=24000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$24005"))
+'        .CommandType = 0
+        .Name = _
+        "5.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'6.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=30000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$30006"))
+'        .CommandType = 0
+        .Name = _
+        "6.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'7.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=36000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$36007"))
+'        .CommandType = 0
+        .Name = _
+        "7.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'8.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=42000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$42008"))
+'        .CommandType = 0
+        .Name = _
+        "8.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'9.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=48000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$48009"))
+'        .CommandType = 0
+        .Name = _
+        "9.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'10.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=54000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$54010"))
+'        .CommandType = 0
+        .Name = _
+        "10.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'11.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=60000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$60011"))
+'        .CommandType = 0
+        .Name = _
+        "11.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'12.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=66000&limit=6000&filter=&orderby=&dir=1&partnerID=3" _
+        , Destination:=Range("$A$66012"))
+'        .CommandType = 0
+        .Name = _
+        "12.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
