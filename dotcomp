@@ -27,7 +27,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-  '      .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '2.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -56,7 +56,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-  '      .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '3.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -114,7 +114,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-  '      .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '5.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -143,7 +143,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'        .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '6.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -172,7 +172,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '7.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -201,7 +201,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '8.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -230,7 +230,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '9.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -259,7 +259,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'        .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '10.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -288,7 +288,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '11.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -346,7 +346,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'        .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '13.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -375,7 +375,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'        .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '14.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -404,7 +404,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '15.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -462,7 +462,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'        .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '17.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -491,7 +491,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '18.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -520,7 +520,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '19.oldal
  ActiveWindow.SmallScroll Down:=9
@@ -549,7 +549,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '20.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -578,7 +578,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '21.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -607,7 +607,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '      .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '22.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -636,7 +636,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '23.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -665,7 +665,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '24.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -694,7 +694,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '      .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '25.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -723,7 +723,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '26.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -752,7 +752,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '27.oldal
 ActiveWindow.SmallScroll Down:=9
@@ -781,7 +781,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 
     
@@ -812,10 +812,10 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-'        .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
-	
-	
+    
+    
 '29.oldal
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -843,7 +843,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 
 '30.oldal
@@ -875,7 +875,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebDisableRedirections = False
         .Refresh BackgroundQuery:=False
     End With
-	
+    
 '31.oldal
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -905,7 +905,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebDisableRedirections = False
        .Refresh BackgroundQuery:=False
     End With
-	
+    
 '32.oldal
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -933,9 +933,9 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
-	
+    
 '33.oldal
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -963,9 +963,9 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '       .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
-	
+    
 '34.oldal
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -993,7 +993,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-   '     .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
     
 '35.oldal
@@ -1023,7 +1023,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-   '     .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 
 '36.oldal
@@ -1053,9 +1053,9 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-   '     .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
-	
+    
 '37.oldal
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -1083,9 +1083,9 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-   '     .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
-	
+    
 '38.oldal
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -1113,7 +1113,7 @@ ActiveWindow.SmallScroll Down:=9
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
-   '     .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
         
 End Sub
