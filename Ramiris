@@ -1,7 +1,6 @@
 Sub Ramiris_import()
-'Sheets("Ramiris").Select
-   Workbooks.Open ("C:\Excel\Ramiris.xlsx")
-   Windows("Ramiris.xlsx").Activate
+Sheets("Ramiris").Select
+
    Range("A1").Select
 '1.oldal
     ActiveWindow.SmallScroll Down:=9
@@ -384,4 +383,120 @@ Sub Ramiris_import()
 
 
         
+
+
+utsorB = Range("B1").End(xlDown).Row
+
+
+'E oszlop PN helyrerakása
+ Columns("E:E").Select
+    Selection.TextToColumns Destination:=Range("E1"), DataType:=xlFixedWidth, _
+        FieldInfo:=Array(0, 1), TrailingMinusNumbers:=True
+
+'J1 oszlopnév "Darabteli PN"
+Range("J1").Select
+ActiveCell.FormulaR1C1 = "Darabteli PN"
+        
+'Darabteli PN függvény futtatása J2-től
+Range("J2").Select
+ActiveCell.FormulaR1C1 = "=COUNTIF(R2C5:R900000C5,RC[-5])"
+Range("J2").AutoFill Destination:=Range("J2:J" & utsorB)
+
+' Függvény értékként való beillesztése
+Columns("J:J").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+
+'Nincs párosítva, Darabteli PN=1
+ '   Selection.AutoFilter
+ 
+     Columns("H:H").Select
+    Selection.Replace What:=",-", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+        
+        
+    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=9, Criteria1:="="
+    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=10, Criteria1:="1"
+    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=8, Criteria1:=">0", _
+        Operator:=xlAnd
+
+'Ram_A oldalra átmásolás
+    Cells.Select
+    Selection.Copy
+    Sheets("Ram_A").Select
+    Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+
+
+    
+'Párosítás függvény
+Range("K2").Select
+ActiveCell.FormulaR1C1 = _
+        "=IFERROR((IF(RC[-7]=(INDEX(Hydra!R2C1:R900000C5,MATCH(Ram_A!RC[-6],Hydra!R2C5:R900000C5,0),2)),CONCATENATE(""setPair("",RC[-10],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(Ram_A!RC[-6],Hydra!R2C5:R900000C5,0),1),"",8);""),""ELL"")),"""")"
+
+Range("K2").Select
+Selection.AutoFill Destination:=Range("K2:K" & utsorB)
+
+  
+  
+' Függvény értékként való beillesztése
+Columns("K:K").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+'------------------ RAM_B ---------------
+' Raktár=1 és nincs ELL vagy párosítás benne
+
+    ActiveSheet.Range("$A$1:$K$900000").AutoFilter Field:=7, Criteria1:="1"
+    ActiveSheet.Range("$A$1:$K$900000").AutoFilter Field:=11, Criteria1:="="
+    Cells.Select
+    Selection.Copy
+    Sheets("Ram_B").Select
+    Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+
+
+
+'Oszlopok törlése (I,J,K oszlop)
+    Columns("I:K").Select
+    Selection.Delete Shift:=xlToLeft
+    
+' Kategória függvények
+    Range("I2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Ram_HIV!R2C1:R900000C6,MATCH(Ram_B!RC[-6],Ram_HIV!R2C3:R900000C3,0),1),"""")"
+    Range("I2").Select
+    Selection.AutoFill Destination:=Range("I2:I" & utsorB)
+
+    Range("J2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Ram_HIV!R2C1:R900000C6,MATCH(Ram_B!RC[-7],Ram_HIV!R2C3:R900000C3,0),2),"""")"
+    Range("J2").Select
+    Selection.AutoFill Destination:=Range("J2:J" & utsorB)
+    
+
+    ' Függvény értékként való beillesztése
+Columns("I:I").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+Columns("J:J").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+        
+
 End Sub
