@@ -85,7 +85,7 @@ Sheets("Dotcomp").Select
         .WebSingleBlockTextImport = False
         .WebDisableDateRecognition = False
         .WebDisableRedirections = False
- '      .Refresh BackgroundQuery:=False
+        .Refresh BackgroundQuery:=False
     End With
 '4.oldal
     ActiveWindow.SmallScroll Down:=9
