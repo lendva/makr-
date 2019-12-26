@@ -1201,5 +1201,15 @@ Selection.AutoFill Destination:=Range("I2:I" & utsorB)
 
 Selection.AutoFill Destination:=Range("I2:I" & utsorB)
 
+' Oszlopok elnevezése
+    Range("I1").Select
+    ActiveCell.FormulaR1C1 = "Dot kategória"
+    Range("J1").Select
+    ActiveCell.FormulaR1C1 = "Inf Főkat"
+    Range("K1").Select
+    ActiveCell.FormulaR1C1 = "Inf Alkat"
+    Range("L1").Select
+    ActiveCell.FormulaR1C1 = "Nem kell"
+  
 
 End Sub
