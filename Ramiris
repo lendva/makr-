@@ -600,4 +600,35 @@ Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
      Range("O2").Select
     Selection.AutoFill Destination:=Range("O2:O" & utsorB)
     
+    
+'Főkat ID függvény
+Range("M2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=INDEX('Kategória ID'!R1C1:R9000C2,MATCH(Ram_C!RC[-2],'Kategória ID'!R1C1:R9000C1,0),2)"
+    Range("M2").Select
+    Selection.AutoFill Destination:=Range("M2:M" & utsorB)
+    
+    Range("N2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=INDEX('Kategória ID'!R1C1:R9000C2,MATCH(Ram_C!RC[-2],'Kategória ID'!R1C1:R9000C1,0),2)"
+    Range("N2").Select
+    Selection.AutoFill Destination:=Range("N2:N" & utsorB)
+
+' Függvény értékként való beillesztése
+Columns("M:M").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+Columns("N:N").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+Columns("O:O").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    
 End Sub
+
