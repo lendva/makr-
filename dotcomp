@@ -1115,9 +1115,12 @@ ActiveWindow.SmallScroll Down:=9
         .WebDisableRedirections = False
         .Refresh BackgroundQuery:=False
     End With
+        
+utsorB = Range("B1").End(xlDown).Row
     
+   
     
-    'E oszlop PN helyrerakása
+'E oszlop PN helyrerakása
  Columns("E:E").Select
     Selection.TextToColumns Destination:=Range("E1"), DataType:=xlFixedWidth, _
         FieldInfo:=Array(0, 1), TrailingMinusNumbers:=True
@@ -1176,5 +1179,27 @@ Range("I2").Select
 Selection.AutoFill Destination:=Range("I2:I" & utsorB)
 
 
+'Raktáron=1 szűrés, átmásolás a Dot_B oldalra
+    Range("A1").Select
+    Selection.AutoFilter
+    ActiveSheet.Range("$A$1:$I$900000").AutoFilter Field:=7, Criteria1:="1"
+    ActiveSheet.Range("$A$1:$I$900000").AutoFilter Field:=9, Criteria1:="=", _
+        Operator:=xlAnd
         
+    Cells.Select
+    Selection.Copy
+    Sheets("Dot_B").Select
+    Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+   
+' Termékkategóriák függvény
+ Range("I2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Dot_HIV!R2C1:R900000C7,MATCH(Dot_B!RC[-7],Dot_HIV!R2C1:R900000C1,0),7),"""")"
+
+Selection.AutoFill Destination:=Range("I2:I" & utsorB)
+
+
 End Sub
