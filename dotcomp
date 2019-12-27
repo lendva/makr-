@@ -1178,6 +1178,11 @@ Range("I2").Select
 Range("I2").Select
 Selection.AutoFill Destination:=Range("I2:I" & utsorB)
 
+' Függvény értékként való beillesztése
+Columns("I:I").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
 
 'Raktáron=1 szűrés, átmásolás a Dot_B oldalra
     Range("A1").Select
@@ -1211,5 +1216,129 @@ Selection.AutoFill Destination:=Range("I2:I" & utsorB)
     Range("L1").Select
     ActiveCell.FormulaR1C1 = "Nem kell"
   
+' Függvény értékként való beillesztése
+Columns("I:I").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+End Sub
 
+Sub Makró15()
+       
+
+utsorB = Range("B1").End(xlDown).Row
+'Nincs párosítva, Darabteli PN=1
+
+ 
+     Columns("H:H").Select
+    Selection.Replace What:=",-", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+        
+        
+    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=9, Criteria1:="="
+    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=10, Criteria1:="1"
+    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=8, Criteria1:=">0", _
+        Operator:=xlAnd
+
+'Dot_A oldalra átmásolás
+    Cells.Select
+    Selection.Copy
+    Sheets("Dot_A").Select
+    Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    
+' Felesleges oszlopok törlése
+    Columns("I:J").Select
+    Application.CutCopyMode = False
+    Selection.Delete Shift:=xlToLeft
+    
+
+'Párosítás függvény
+Range("I2").Select
+  ActiveCell.FormulaR1C1 = _
+        "=IFERROR((IF(RC[-5]=(INDEX(Hydra!R2C1:R900000C5,MATCH(Dot_A!RC[-4],Hydra!R2C5:R900000C5,0),2)),CONCATENATE(""setPair("",RC[-8],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(Dot_A!RC[-4],Hydra!R2C5:R900000C5,0),1),"",11);""),""ELL"")),"""")"
+Range("I2").Select
+Selection.AutoFill Destination:=Range("I2:I" & utsorB)
+
+' Függvény értékként való beillesztése
+Columns("I:I").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+'Raktáron=1 szűrés, átmásolás a Dot_B oldalra
+    Range("A1").Select
+    Selection.AutoFilter
+    ActiveSheet.Range("$A$1:$I$900000").AutoFilter Field:=7, Criteria1:="1"
+    ActiveSheet.Range("$A$1:$I$900000").AutoFilter Field:=9, Criteria1:="=", _
+        Operator:=xlAnd
+        
+    Cells.Select
+    Selection.Copy
+    Sheets("Dot_B").Select
+    Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+   
+' Termékkategóriák függvény
+ Range("I2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Dot_HIV!R2C1:R900000C7,MATCH(Dot_B!RC[-7],Dot_HIV!R2C1:R900000C1,0),7),"""")"
+    Selection.AutoFill Destination:=Range("I2:I" & utsorB)
+
+' Oszlopok elnevezése
+    Range("I1").Select
+    ActiveCell.FormulaR1C1 = "Dot kategória"
+    Range("J1").Select
+    ActiveCell.FormulaR1C1 = "Kat szűrés"
+    Range("K1").Select
+    ActiveCell.FormulaR1C1 = "INF Főkat"
+    Range("L1").Select
+    ActiveCell.FormulaR1C1 = "INF Alkat"
+  
+' Függvény értékként való beillesztése
+Columns("I:I").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+End Sub
+Sub Makró16()
+
+utsorB = Range("B1").End(xlDown).Row
+
+'Kat szűrés függvény
+    Range("J2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(IF(MATCH(Dot_B!RC[-1],Dot_X!R1C1:R9000C1,0)>0,""x"",""""),"""")"
+    Selection.AutoFill Destination:=Range("J2:J" & utsorB)
+
+' Függvény értékként való beillesztése
+Columns("J:J").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+
+'Szűrés, Dot_C munkalapra átmásolás
+    ActiveSheet.Range("$A$1:$L$90000").AutoFilter Field:=10, Criteria1:="=", _
+        Operator:=xlAnd
+    Range("A1:L90000").Select
+
+    Selection.Copy
+    Sheets("Dot_C").Select
+    Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+'KAT szűrés oszlop törlése
+    Columns("J:J").Select
+    Application.CutCopyMode = False
+    Selection.Delete Shift:=xlToLeft
 End Sub
