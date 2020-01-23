@@ -1,0 +1,697 @@
+
+
+
+Sub CHS_import()
+
+Sheets("CHS").Select
+
+
+'1.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=0&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$1"))
+'        .CommandType = 0
+        .Name = _
+        "1.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'2.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=6000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$6002"))
+'        .CommandType = 0
+        .Name = _
+        "2.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'3.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=12000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$12003"))
+'        .CommandType = 0
+        .Name = _
+        "3.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'4.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=18000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$18004"))
+'        .CommandType = 0
+        .Name = _
+        "4.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'5.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=24000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$24005"))
+'        .CommandType = 0
+        .Name = _
+        "5.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'6.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=30000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$30006"))
+'        .CommandType = 0
+        .Name = _
+        "6.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'7.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=36000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$36007"))
+'        .CommandType = 0
+        .Name = _
+        "7.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'8.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=42000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$42008"))
+'        .CommandType = 0
+        .Name = _
+        "8.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'9.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=48000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$48009"))
+'        .CommandType = 0
+        .Name = _
+        "9.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'10.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=54000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$54010"))
+'        .CommandType = 0
+        .Name = _
+        "10.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'11.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=60000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$60011"))
+'        .CommandType = 0
+        .Name = _
+        "11.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+'12.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=66000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$66012"))
+'        .CommandType = 0
+        .Name = _
+        "12.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+
+
+'13.oldal
+    ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=72000&limit=6000&filter=&orderby=&dir=1&partnerID=2" _
+        , Destination:=Range("$A$72013"))
+'        .CommandType = 0
+        .Name = _
+        "13.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+
+
+
+utsorB = Range("B1").End(xlDown).Row
+
+
+'E oszlop PN helyrerakása
+ Columns("E:E").Select
+    Selection.TextToColumns Destination:=Range("E1"), DataType:=xlFixedWidth, _
+        FieldInfo:=Array(0, 1), TrailingMinusNumbers:=True
+        
+'H oszlop helyrerakása
+    Columns("H:H").Select
+    Selection.Replace What:="-", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+    Selection.Replace What:=",", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+    Selection.Replace What:=" ", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+    Selection.NumberFormat = "0"
+
+'Oszlopnevek
+Range("J1").Select
+ActiveCell.FormulaR1C1 = "Darabteli PN"
+Range("K1").Select
+ActiveCell.FormulaR1C1 = "Párosítás"
+Range("L1").Select
+ActiveCell.FormulaR1C1 = "Kat X"
+Range("M1").Select
+ActiveCell.FormulaR1C1 = "Termek X"
+Range("N1").Select
+ActiveCell.FormulaR1C1 = "CHS Kat"
+Range("O1").Select
+ActiveCell.FormulaR1C1 = "Inf Főkat"
+Range("P1").Select
+ActiveCell.FormulaR1C1 = "Inf Alkat"
+Range("Q1").Select
+ActiveCell.FormulaR1C1 = "Főkat ID"
+Range("R1").Select
+ActiveCell.FormulaR1C1 = "Alkat ID"
+Range("S1").Select
+ActiveCell.FormulaR1C1 = "Gyártó ID"
+Range("T1").Select
+ActiveCell.FormulaR1C1 = "JÓ?"
+Range("U1").Select
+ActiveCell.FormulaR1C1 = "Gyártó szünetes"
+Range("V1").Select
+ActiveCell.FormulaR1C1 = "Helyette"
+Range("W1").Select
+ActiveCell.FormulaR1C1 = "Kisbetűs"
+Range("X1").Select
+ActiveCell.FormulaR1C1 = "Helyette2"
+Range("Y1").Select
+ActiveCell.FormulaR1C1 = "Nagybetűs"
+Range("Z1").Select
+ActiveCell.FormulaR1C1 = "Helyette3"
+Range("AA1").Select
+ActiveCell.FormulaR1C1 = "Első nagy"
+Range("AB1").Select
+ActiveCell.FormulaR1C1 = "Helyette végleges"
+Range("AC1").Select
+ActiveCell.FormulaR1C1 = "Kimetsz"
+Range("AD1").Select
+ActiveCell.FormulaR1C1 = "ELL Gyártó"
+Range("AE1").Select
+ActiveCell.FormulaR1C1 = "ELL Terméknév"
+Range("AF1").Select
+ActiveCell.FormulaR1C1 = "ELL Párosítás"
+
+
+'J oszlop - Darabteli PN függvény
+Range("J2").Select
+ActiveCell.FormulaR1C1 = "=COUNTIF(R2C5:R900000C5,RC[-5])"
+Range("J2").AutoFill Destination:=Range("J2:J" & utsorB)
+
+' Függvény értékként való beillesztése
+Columns("J:J").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+
+'FÜGGVÉNYEK
+    Range("K2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR((IF(RC[-7]=(INDEX(Hydra!R2C1:R900000C5,MATCH(RC[-6],Hydra!R2C5:R900000C5,0),2)),CONCATENATE(""setPair("",RC[-10],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(RC[-6],Hydra!R2C5:R900000C5,0),1),"",2);""),""ELL"")),"""")"
+    Range("L2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(RC[2]="""","""",IFERROR(IF((MATCH(RC[2],CHS_X!R1C1:R90000C1,0))>0,""X"",""""),""""))"
+    Range("M2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(IF((MATCH(RC[-12],X!R2C1:R900000C1,0))>0,""X"",""""),"""")"
+    Range("N2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(CHS_HIV!R2C1:R900000C5,MATCH(CHS!RC[-12],CHS_HIV!R2C1:R900000C1,0),4),"""")"
+    Range("O2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(CHS_Kat!R1C1:R90000C3,MATCH(CHS!RC[-1],CHS_Kat!R1C1:R90000C1,0),2),"""")"
+    Range("P2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(CHS_Kat!R1C1:R90000C3,MATCH(CHS!RC[-2],CHS_Kat!R1C1:R90000C1,0),3),"""")"
+    Range("Q2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(IF(RC[-2]="""","""",INDEX('Kategória ID'!R1C1:R96C2,MATCH(CHS!RC[-2],'Kategória ID'!R1C1:R96C1,0),2)),"""")"
+    Range("R2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(IF(RC[-2]="""","""",INDEX('Kategória ID'!R1C1:R96C2,MATCH(CHS!RC[-2],'Kategória ID'!R1C1:R96C1,0),2)),"""")"
+    Range("S2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Gyártó_ID!R1C1:R5000C2,MATCH(CHS!RC[-15],Gyártó_ID!R1C1:R5000C1,0),2),"""")"
+    Range("T2").Select
+        ActiveCell.FormulaR1C1 = _
+        "=IF(AND(RC[-13]>0,RC[-12]>0,RC[-11]="""",RC[-8]="""",RC[-7]=""""),""JÓ"","""")"
+    Range("U2").Select
+    ActiveCell.FormulaR1C1 = "=CONCATENATE(RC[-17],"" "")"
+    Range("V2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-16],RC[-1],"""")"
+    Range("W2").Select
+    ActiveCell.FormulaR1C1 = "=LOWER(RC[-2])"
+    Range("X2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-2],RC[-1],"""")"
+    Range("Y2").Select
+    ActiveCell.FormulaR1C1 = "=UPPER(RC[-2])"
+    Range("Z2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-2],RC[-1],"""")"
+    Range("AA2").Select
+    ActiveCell.FormulaR1C1 = "=PROPER(RC[-4])"
+    Range("AB2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-2],RC[-1],"""")"
+    Range("AC2").Select
+    ActiveCell.FormulaR1C1 = "=TRIM(RC[-1])"
+    Range("AD2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(RC[-19]=""ELL"",INDEX(Hydra!R2C1:R900000C5,MATCH(CHS!RC[-25],Hydra!R2C5:R900000C5,0),2),"""")"
+    Range("AE2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(RC[-20]=""ELL"",INDEX(Hydra!R2C1:R900000C5,MATCH(CHS!RC[-26],Hydra!R2C5:R900000C5,0),4),"""")"
+    Range("AF2").Select
+        ActiveCell.FormulaR1C1 = _
+        "=IF(RC[-21]=""ELL"",CONCATENATE(""setPair("",RC[-31],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(RC[-27],Hydra!R2C5:R900000C5,0),1),"",8);""),"""")"
+		
+		
+ Range("K2").AutoFill Destination:=Range("K2:K" & utsorB)
+    Range("L2").AutoFill Destination:=Range("L2:L" & utsorB)
+    Range("M2").AutoFill Destination:=Range("M2:M" & utsorB)
+    Range("N2").AutoFill Destination:=Range("N2:N" & utsorB)
+    Range("O2").AutoFill Destination:=Range("O2:O" & utsorB)
+    Range("P2").AutoFill Destination:=Range("P2:P" & utsorB)
+    Range("Q2").AutoFill Destination:=Range("Q2:Q" & utsorB)
+    Range("R2").AutoFill Destination:=Range("R2:R" & utsorB)
+    Range("S2").AutoFill Destination:=Range("S2:S" & utsorB)
+    Range("N2").AutoFill Destination:=Range("N2:N" & utsorB)
+    Range("T2").AutoFill Destination:=Range("T2:T" & utsorB)
+    Range("U2").AutoFill Destination:=Range("U2:U" & utsorB)
+    Range("V2").AutoFill Destination:=Range("V2:V" & utsorB)
+    Range("W2").AutoFill Destination:=Range("W2:W" & utsorB)
+    Range("X2").AutoFill Destination:=Range("X2:X" & utsorB)
+    Range("Y2").AutoFill Destination:=Range("Y2:Y" & utsorB)
+    Range("Z2").AutoFill Destination:=Range("Z2:Z" & utsorB)
+    Range("AA2").AutoFill Destination:=Range("AA2:AA" & utsorB)
+    Range("AB2").AutoFill Destination:=Range("AB2:AB" & utsorB)
+    Range("AC2").AutoFill Destination:=Range("AC2:AC" & utsorB)
+    Range("AD2").AutoFill Destination:=Range("AD2:AD" & utsorB)
+    Range("AE2").AutoFill Destination:=Range("AE2:AE" & utsorB)
+    Range("AF2").AutoFill Destination:=Range("AF2:AF" & utsorB)
+    
+End Sub
+Sub CHS_értékként()
+
+Columns("K:K").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("L:L").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("M:M").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("N:N").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("O:O").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("P:P").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("Q:Q").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("R:R").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("S:S").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("N:N").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("T:T").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("U:U").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("V:V").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("W:W").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("X:X").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("Y:Y").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("Z:Z").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("AA:AA").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("AB:AB").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("AC:AC").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+Columns("AD:AD").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+Columns("AE:AE").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+Columns("AF:AF").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+End Sub
+
