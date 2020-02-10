@@ -1,5 +1,6 @@
 Sub Dotcomp_import()
 Sheets("Dotcomp").Select
+Range("A1").Select
 '1.oldal
     ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
@@ -1115,21 +1116,84 @@ ActiveWindow.SmallScroll Down:=9
         .WebDisableRedirections = False
         .Refresh BackgroundQuery:=False
     End With
-        
+	
+	        
+End Sub
+	
+Sub Dotcomp_fuggveny()
+
+
 utsorB = Range("B1").End(xlDown).Row
-    
-   
-    
+
+
 'E oszlop PN helyrerakása
  Columns("E:E").Select
     Selection.TextToColumns Destination:=Range("E1"), DataType:=xlFixedWidth, _
         FieldInfo:=Array(0, 1), TrailingMinusNumbers:=True
+        
+'H oszlop helyrerakása
+    Columns("H:H").Select
+    Selection.Replace What:="-", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+    Selection.Replace What:=",", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+    Selection.Replace What:=" ", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+    Selection.NumberFormat = "0"
 
-'J1 oszlopnév "Darabteli PN"
+'Oszlopnevek
 Range("J1").Select
 ActiveCell.FormulaR1C1 = "Darabteli PN"
-        
-'Darabteli PN függvény futtatása J2-től
+Range("K1").Select
+ActiveCell.FormulaR1C1 = "Párosítás"
+Range("L1").Select
+ActiveCell.FormulaR1C1 = "Kat X"
+Range("M1").Select
+ActiveCell.FormulaR1C1 = "Termek X"
+Range("N1").Select
+ActiveCell.FormulaR1C1 = "Dot Kat"
+Range("O1").Select
+ActiveCell.FormulaR1C1 = "Inf Főkat"
+Range("P1").Select
+ActiveCell.FormulaR1C1 = "Inf Alkat"
+Range("Q1").Select
+ActiveCell.FormulaR1C1 = "Főkat ID"
+Range("R1").Select
+ActiveCell.FormulaR1C1 = "Alkat ID"
+Range("S1").Select
+ActiveCell.FormulaR1C1 = "Gyártó ID"
+Range("T1").Select
+ActiveCell.FormulaR1C1 = "JÓ?"
+Range("U1").Select
+ActiveCell.FormulaR1C1 = "Gyártó szünetes"
+Range("V1").Select
+ActiveCell.FormulaR1C1 = "Helyette"
+Range("W1").Select
+ActiveCell.FormulaR1C1 = "Kisbetűs"
+Range("X1").Select
+ActiveCell.FormulaR1C1 = "Helyette2"
+Range("Y1").Select
+ActiveCell.FormulaR1C1 = "Nagybetűs"
+Range("Z1").Select
+ActiveCell.FormulaR1C1 = "Helyette3"
+Range("AA1").Select
+ActiveCell.FormulaR1C1 = "Első nagy"
+Range("AB1").Select
+ActiveCell.FormulaR1C1 = "Helyette végleges"
+Range("AC1").Select
+ActiveCell.FormulaR1C1 = "Kimetsz"
+Range("AD1").Select
+ActiveCell.FormulaR1C1 = "ELL Gyártó"
+Range("AE1").Select
+ActiveCell.FormulaR1C1 = "ELL Terméknév"
+Range("AF1").Select
+ActiveCell.FormulaR1C1 = "ELL Párosítás"
+
+
+'J oszlop - Darabteli PN függvény
 Range("J2").Select
 ActiveCell.FormulaR1C1 = "=COUNTIF(R2C5:R900000C5,RC[-5])"
 Range("J2").AutoFill Destination:=Range("J2:J" & utsorB)
@@ -1142,181 +1206,226 @@ Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         
         
 
-'Nincs párosítva, Darabteli PN=1
- '   Selection.AutoFilter
- 
-     Columns("H:H").Select
-    Selection.Replace What:=",-", Replacement:="", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False
-        
-        
-    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=9, Criteria1:="="
-    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=10, Criteria1:="1"
-    ActiveSheet.Range("$A$1:$J$900000").AutoFilter Field:=8, Criteria1:=">0", _
-        Operator:=xlAnd
-
-'Dot_A oldalra átmásolás
-    Cells.Select
-    Selection.Copy
-    Sheets("Dot_A").Select
-    Range("A1").Select
-    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-        :=False, Transpose:=False
-    Application.CutCopyMode = False
-    
-' Felesleges oszlopok törlése
-    Columns("I:J").Select
-    Application.CutCopyMode = False
-    Selection.Delete Shift:=xlToLeft
-    
-
-'Párosítás függvény
-Range("I2").Select
-  ActiveCell.FormulaR1C1 = _
-        "=IFERROR((IF(RC[-5]=(INDEX(Hydra!R2C1:R900000C5,MATCH(Dot_A!RC[-4],Hydra!R2C5:R900000C5,0),2)),CONCATENATE(""setPair("",RC[-8],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(Dot_A!RC[-4],Hydra!R2C5:R900000C5,0),1),"",11);""),""ELL"")),"""")"
-Range("I2").Select
-Selection.AutoFill Destination:=Range("I2:I" & utsorB)
-
-' Függvény értékként való beillesztése
-Columns("I:I").Select
-Selection.Copy
-Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-        :=False, Transpose:=False
-
-'Raktáron=1 szűrés, átmásolás a Dot_B oldalra
-    Range("A1").Select
-    Selection.AutoFilter
-    ActiveSheet.Range("$A$1:$I$900000").AutoFilter Field:=7, Criteria1:="1"
-    ActiveSheet.Range("$A$1:$I$900000").AutoFilter Field:=9, Criteria1:="=", _
-        Operator:=xlAnd
-        
-    Cells.Select
-    Selection.Copy
-    Sheets("Dot_B").Select
-    Range("A1").Select
-    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-        :=False, Transpose:=False
-    Application.CutCopyMode = False
-   
-' Termékkategóriák függvény
- Range("I2").Select
-    ActiveCell.FormulaR1C1 = _
-        "=IFERROR(INDEX(Dot_HIV!R2C1:R900000C7,MATCH(Dot_B!RC[-7],Dot_HIV!R2C1:R900000C1,0),7),"""")"
-
-Selection.AutoFill Destination:=Range("I2:I" & utsorB)
-
-' Oszlopok elnevezése
-    Range("I1").Select
-    ActiveCell.FormulaR1C1 = "Dot kategória"
-    Range("J1").Select
-    ActiveCell.FormulaR1C1 = "Inf Főkat"
-    Range("K1").Select
-    ActiveCell.FormulaR1C1 = "Inf Alkat"
-    Range("L1").Select
-    ActiveCell.FormulaR1C1 = "Nem kell"
-  
-' Függvény értékként való beillesztése
-Columns("I:I").Select
-Selection.Copy
-Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-        :=False, Transpose:=False
-        
-
-'Kat szűrés függvény
-    Range("J2").Select
-    ActiveCell.FormulaR1C1 = _
-        "=IFERROR(IF(MATCH(Dot_B!RC[-1],Dot_X!R1C1:R9000C1,0)>0,""x"",""""),"""")"
-    Selection.AutoFill Destination:=Range("J2:J" & utsorB)
-
-' Függvény értékként való beillesztése
-Columns("J:J").Select
-Selection.Copy
-Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-        :=False, Transpose:=False
-        
-
-'Szűrés, Dot_C munkalapra átmásolás
-    ActiveSheet.Range("$A$1:$L$90000").AutoFilter Field:=10, Criteria1:="=", _
-        Operator:=xlAnd
-    Range("A1:L90000").Select
-
-    Selection.Copy
-    Sheets("Dot_C").Select
-    Range("A1").Select
-    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-        :=False, Transpose:=False
-        
-'KAT szűrés oszlop törlése
-    Columns("J:J").Select
-    Application.CutCopyMode = False
-    Selection.Delete Shift:=xlToLeft
-    
-    Range("L1").Select
-    ActiveCell.FormulaR1C1 = "Főkat ID"
-    Range("M1").Select
-    ActiveCell.FormulaR1C1 = "Alkat ID"
-    Range("N1").Select
-    ActiveCell.FormulaR1C1 = "Gyártó ID"
-    
-
-'Főkat, alkat, gyártó függvények ID+nevek
-
-    Range("J2").Select
-    ActiveCell.FormulaR1C1 = _
-        "=IFERROR(INDEX(Dot_Kat!R1C1:R9000C3,MATCH(Dot_C!RC[-1],Dot_Kat!R1C1:R9000C1,0),2),"""")"
-        Selection.AutoFill Destination:=Range("J2:J" & utsorB)
-        
+'FÜGGVÉNYEK
     Range("K2").Select
     ActiveCell.FormulaR1C1 = _
-        "=IFERROR(INDEX(Dot_Kat!R1C1:R9000C3,MATCH(Dot_C!RC[-2],Dot_Kat!R1C1:R9000C1,0),3),"""")"
-         Selection.AutoFill Destination:=Range("K2:K" & utsorB)
-        
+        "=IFERROR((IF(RC[-7]=(INDEX(Hydra!R2C1:R900000C5,MATCH(RC[-6],Hydra!R2C5:R900000C5,0),2)),CONCATENATE(""setPair("",RC[-10],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(RC[-6],Hydra!R2C5:R900000C5,0),1),"",11);""),""ELL"")),"""")"
     Range("L2").Select
     ActiveCell.FormulaR1C1 = _
-        "=IFERROR(INDEX('Kategória ID'!R1C1:R96C2,MATCH(Dot_C!RC[-2],'Kategória ID'!R1C1:R96C1,0),2),"""")"
-        Selection.AutoFill Destination:=Range("L2:L" & utsorB)
-        
+        "=IF(RC[2]="""","""",IFERROR(IF((MATCH(RC[2],Dot_X!R1C1:R90000C1,0))>0,""X"",""""),""""))"
     Range("M2").Select
     ActiveCell.FormulaR1C1 = _
-        "=IFERROR(INDEX('Kategória ID'!R1C1:R96C2,MATCH(Dot_C!RC[-2],'Kategória ID'!R1C1:R96C1,0),2),"""")"
-        Selection.AutoFill Destination:=Range("M2:M" & utsorB)
-        
+        "=IFERROR(IF((MATCH(RC[-12],X!R2C1:R900000C1,0))>0,""X"",""""),"""")"
     Range("N2").Select
+        ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Dot_HIV!R2C1:R900000C14,MATCH(Dotcomp!RC[-11],Dot_HIV!R2C3:R900000C3,0),14),"""")"
+    Range("O2").Select
     ActiveCell.FormulaR1C1 = _
-        "=IFERROR(INDEX(Gyártó_ID!R1C1:R5000C2,MATCH(Dot_C!RC[-10],Gyártó_ID!R1C1:R5000C1,0),2),"""")"
-        Selection.AutoFill Destination:=Range("N2:N" & utsorB)
-        
+        "=IFERROR(INDEX(Dot_Kat!R1C1:R90000C3,MATCH(Dotcomp!RC[-1],Dot_Kat!R1C1:R90000C1,0),2),"""")"
+    Range("P2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Dot_Kat!R1C1:R90000C3,MATCH(Dotcomp!RC[-2],Dot_Kat!R1C1:R90000C1,0),3),"""")"
+    Range("Q2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(IF(RC[-2]="""","""",INDEX('Kategória ID'!R1C1:R96C2,MATCH(Dotcomp!RC[-2],'Kategória ID'!R1C1:R96C1,0),2)),"""")"
+    Range("R2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(IF(RC[-2]="""","""",INDEX('Kategória ID'!R1C1:R96C2,MATCH(Dotcomp!RC[-2],'Kategória ID'!R1C1:R96C1,0),2)),"""")"
+    Range("S2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IFERROR(INDEX(Gyártó_ID!R1C1:R5000C2,MATCH(Dotcomp!RC[-15],Gyártó_ID!R1C1:R5000C1,0),2),"""")"
+    Range("T2").Select
+        ActiveCell.FormulaR1C1 = _
+        "=IF(AND(RC[-13]>0,RC[-12]>0,RC[-11]="""",RC[-8]="""",RC[-7]=""""),""JÓ"","""")"
+    Range("U2").Select
+    ActiveCell.FormulaR1C1 = "=CONCATENATE(RC[-17],"" "")"
+    Range("V2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-16],RC[-1],"""")"
+    Range("W2").Select
+    ActiveCell.FormulaR1C1 = "=LOWER(RC[-2])"
+    Range("X2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-2],RC[-1],"""")"
+    Range("Y2").Select
+    ActiveCell.FormulaR1C1 = "=UPPER(RC[-2])"
+    Range("Z2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-2],RC[-1],"""")"
+    Range("AA2").Select
+    ActiveCell.FormulaR1C1 = "=PROPER(RC[-4])"
+    Range("AB2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-2],RC[-1],"""")"
+    Range("AC2").Select
+    ActiveCell.FormulaR1C1 = "=TRIM(RC[-1])"
+    Range("AD2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(RC[-19]=""ELL"",INDEX(Hydra!R2C1:R900000C5,MATCH(Dotcomp!RC[-25],Hydra!R2C5:R900000C5,0),2),"""")"
+    Range("AE2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=IF(RC[-20]=""ELL"",INDEX(Hydra!R2C1:R900000C5,MATCH(Dotcomp!RC[-26],Hydra!R2C5:R900000C5,0),4),"""")"
+    Range("AF2").Select
+        ActiveCell.FormulaR1C1 = _
+        "=IF(RC[-21]=""ELL"",CONCATENATE(""setPair("",RC[-31],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(RC[-27],Hydra!R2C5:R900000C5,0),1),"",8);""),"""")"
+		
+		
+ Range("K2").AutoFill Destination:=Range("K2:K" & utsorB)
+    Range("L2").AutoFill Destination:=Range("L2:L" & utsorB)
+    Range("M2").AutoFill Destination:=Range("M2:M" & utsorB)
+    Range("N2").AutoFill Destination:=Range("N2:N" & utsorB)
+    Range("O2").AutoFill Destination:=Range("O2:O" & utsorB)
+    Range("P2").AutoFill Destination:=Range("P2:P" & utsorB)
+    Range("Q2").AutoFill Destination:=Range("Q2:Q" & utsorB)
+    Range("R2").AutoFill Destination:=Range("R2:R" & utsorB)
+    Range("S2").AutoFill Destination:=Range("S2:S" & utsorB)
+    Range("N2").AutoFill Destination:=Range("N2:N" & utsorB)
+    Range("T2").AutoFill Destination:=Range("T2:T" & utsorB)
+    Range("U2").AutoFill Destination:=Range("U2:U" & utsorB)
+    Range("V2").AutoFill Destination:=Range("V2:V" & utsorB)
+    Range("W2").AutoFill Destination:=Range("W2:W" & utsorB)
+    Range("X2").AutoFill Destination:=Range("X2:X" & utsorB)
+    Range("Y2").AutoFill Destination:=Range("Y2:Y" & utsorB)
+    Range("Z2").AutoFill Destination:=Range("Z2:Z" & utsorB)
+    Range("AA2").AutoFill Destination:=Range("AA2:AA" & utsorB)
+    Range("AB2").AutoFill Destination:=Range("AB2:AB" & utsorB)
+    Range("AC2").AutoFill Destination:=Range("AC2:AC" & utsorB)
+    Range("AD2").AutoFill Destination:=Range("AD2:AD" & utsorB)
+    Range("AE2").AutoFill Destination:=Range("AE2:AE" & utsorB)
+    Range("AF2").AutoFill Destination:=Range("AF2:AF" & utsorB)
+    
+End Sub
+Sub Dot_értékként()
 
-' Függvény értékként való beillesztése
-Columns("J:J").Select
-Selection.Copy
-Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-        :=False, Transpose:=False
-
-
-' Függvény értékként való beillesztése
 Columns("K:K").Select
 Selection.Copy
 Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
 
-' Függvény értékként való beillesztése
+
 Columns("L:L").Select
 Selection.Copy
 Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
-        
-' Függvény értékként való beillesztése
+
+
 Columns("M:M").Select
 Selection.Copy
 Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
-        
-' Függvény értékként való beillesztése
+
+
 Columns("N:N").Select
 Selection.Copy
 Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
- 
+
+
+Columns("O:O").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("P:P").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("Q:Q").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("R:R").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("S:S").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("N:N").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("T:T").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("U:U").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("V:V").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("W:W").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("X:X").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("Y:Y").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("Z:Z").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("AA:AA").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+
+Columns("AB:AB").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+
+Columns("AC:AC").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+Columns("AD:AD").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+Columns("AE:AE").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+Columns("AF:AF").Select
+Selection.Copy
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
 End Sub
