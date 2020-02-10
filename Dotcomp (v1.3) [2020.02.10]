@@ -1091,7 +1091,7 @@ ActiveWindow.SmallScroll Down:=9
 ActiveWindow.SmallScroll Down:=9
     With ActiveSheet.QueryTables.Add(Connection:= _
         "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=220000&limit=6000&filter=&orderby=&dir=1&partnerID=11" _
-        , Destination:=Range("$A$220038"))
+        , Destination:=Range("$A$222038"))
 '        .CommandType = 0
         .Name = _
         "38.oldal"
@@ -1116,12 +1116,12 @@ ActiveWindow.SmallScroll Down:=9
         .WebDisableRedirections = False
         .Refresh BackgroundQuery:=False
     End With
-	
-	        
+    
+            
 End Sub
-	
+    
 Sub Dotcomp_fuggveny()
-
+Sheets("Dotcomp").Select
 
 utsorB = Range("B1").End(xlDown).Row
 
@@ -1264,8 +1264,8 @@ Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
     Range("AF2").Select
         ActiveCell.FormulaR1C1 = _
         "=IF(RC[-21]=""ELL"",CONCATENATE(""setPair("",RC[-31],"","",INDEX(Hydra!R2C1:R900000C5,MATCH(RC[-27],Hydra!R2C5:R900000C5,0),1),"",8);""),"""")"
-		
-		
+        
+        
  Range("K2").AutoFill Destination:=Range("K2:K" & utsorB)
     Range("L2").AutoFill Destination:=Range("L2:L" & utsorB)
     Range("M2").AutoFill Destination:=Range("M2:M" & utsorB)
@@ -1429,3 +1429,4 @@ Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         
         
 End Sub
+
