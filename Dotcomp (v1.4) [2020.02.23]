@@ -1117,10 +1117,7 @@ ActiveWindow.SmallScroll Down:=9
         .Refresh BackgroundQuery:=False
     End With
     
-            
-End Sub
-    
-Sub Dotcomp_fuggveny()
+           
 Sheets("Dotcomp").Select
 
 utsorB = Range("B1").End(xlDown).Row
@@ -1290,8 +1287,6 @@ Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
     Range("AE2").AutoFill Destination:=Range("AE2:AE" & utsorB)
     Range("AF2").AutoFill Destination:=Range("AF2:AF" & utsorB)
     
-End Sub
-Sub Dot_értékként()
 
 Columns("K:K").Select
 Selection.Copy
