@@ -1,0 +1,40 @@
+Sub Dot_HIV()
+
+    Cells.Select
+    Range("B4").Activate
+    Selection.Copy
+    Sheets.Add After:=ActiveSheet
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Range("P1").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=TRIM(RC[-15])"
+    Range("P1").Select
+    Selection.AutoFill Destination:=Range("P1:AD1"), Type:=xlFillDefault
+    Range("P1:AD1").Select
+    Selection.AutoFill Destination:=Range("P1:AD900000")
+    Range("P1:AD900000").Select
+    Columns("P:AD").Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Columns("A:O").Select
+    Range("O1").Activate
+    Application.CutCopyMode = False
+    Selection.Delete Shift:=xlToLeft
+    Columns("A:A").Select
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
+        FieldInfo:=Array(0, 1), TrailingMinusNumbers:=True
+    Columns("C:C").Select
+    Selection.TextToColumns Destination:=Range("C1"), DataType:=xlFixedWidth, _
+        FieldInfo:=Array(0, 1), TrailingMinusNumbers:=True
+    Selection.NumberFormat = "0"
+    Columns("A:A").Select
+    Selection.NumberFormat = "0"
+    Columns("D:D").Select
+    Selection.TextToColumns Destination:=Range("D1"), DataType:=xlFixedWidth, _
+        FieldInfo:=Array(0, 1), TrailingMinusNumbers:=True
+    Selection.NumberFormat = "0"
+    Cells.Select
+    Selection.ColumnWidth = 7.55
+End Sub
