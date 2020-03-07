@@ -1117,6 +1117,36 @@ ActiveWindow.SmallScroll Down:=9
         .Refresh BackgroundQuery:=False
     End With
     
+'39.oldal
+ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=226000&limit=6000&filter=&orderby=&dir=1&partnerID=11" _
+        , Destination:=Range("$A$228039"))
+'        .CommandType = 0
+        .Name = _
+        "39.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+    
            
 Sheets("Dotcomp").Select
 
@@ -1424,4 +1454,5 @@ Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         
         
 End Sub
+
 
