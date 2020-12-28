@@ -1206,7 +1206,67 @@ ActiveWindow.SmallScroll Down:=9
         .WebDisableRedirections = False
         .Refresh BackgroundQuery:=False
     End With
-           
+    
+'42.oldal
+ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=246000&limit=6000&filter=&orderby=&dir=1&partnerID=11" _
+        , Destination:=Range("$A$246042"))
+'        .CommandType = 0
+        .Name = _
+        "42.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+     
+'43.oldal
+ActiveWindow.SmallScroll Down:=9
+    With ActiveSheet.QueryTables.Add(Connection:= _
+        "URL;https://www.informateka.hu/_hydra/admin-partner-termekek.php?offset=252000&limit=6000&filter=&orderby=&dir=1&partnerID=11" _
+        , Destination:=Range("$A$252043"))
+'        .CommandType = 0
+        .Name = _
+        "43.oldal"
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = False
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlSpecifiedTables
+        .WebFormatting = xlWebFormattingRTF
+        .WebTables = "9"
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+    
 Sheets("Dotcomp").Select
 
 utsorB = Range("B1").End(xlDown).Row
